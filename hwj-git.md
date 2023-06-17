@@ -16,7 +16,7 @@ git config --global user.email 24736743@qq.com   邮箱
 
 # git 基本知识
 
-![Image text](/img/640.png)
+![Image text](img/640.png)
 
 ![Image text](img/card.png)
 
