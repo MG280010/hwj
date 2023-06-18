@@ -20,24 +20,22 @@ git config --global user.email 24736743@qq.com   邮箱
 
 ![Image text](img/card.png)
 
-![Image text](img/Git-push-command.jpeg)
+# git 本地仓库搭建 (重要)
 
-# git 本地仓库搭建
-
-## 1.创建全新仓库
+## 1.创建全新仓库 \*\*\*
 
 ```
 #在当前目录新建一个git代码库
 $git init
 ```
 
-## 2.克隆远程仓库
+## 2.克隆远程仓库 \*\*\*
 
 ```
 git clone [] //git@github.com:MG280010/hwj.git
 ```
 
-## 3.查看文件状态
+## 3.查看文件状态 \*\*\*
 
 ```
 #查看指定文件的状态
@@ -47,7 +45,7 @@ git status [filename]
 git status
 ```
 
-## 4.
+# 4.将我们工作区的代码放进本地仓库 \*\*\*
 
 ```
 # git add .
@@ -61,7 +59,12 @@ touch test.txt
 # -m 提交信息
 ```
 
+![Image text](img/Git-push-command.jpeg)
+
 # git 分支
+
+创建分支 可以使我们在`同一个远程库中`，进行`多个版本`的开发，并不会破坏`已有`的代码 通过创建新的分支，开发人员可以及进行`独立安全`的工作，并在需要时`合并`到主分支  
+利于帮助`团队合作`，避免发生`代码冲突`和错误，提高代码质量
 
 ## 1.列出本地所有分支
 
@@ -75,7 +78,7 @@ git branch
 git branch -r
 ```
 
-## 3.新建分支
+## 3.新建分支 \*\*\*
 
 ```
 git branch [分支名称]
@@ -95,6 +98,8 @@ git merge [branch]
 例：git merge a 将a分支 合并到 master分支中
 ```
 
+![Image text](img/img1.gif)
+
 ## 5.删除分支
 
 ```
@@ -109,7 +114,7 @@ git tag v1.0
 
 # 通过 git 将代码提交到 github
 
-## pull
+# pull (拉取)
 
 直译过来就是 `拉`  
 远程仓库有了`更新  `  
@@ -120,7 +125,7 @@ git tag v1.0
 git pull origin master
 ```
 
-## push
+# push (提交)
 
 相反于 `pull`  
 我们需要将本地代码`推到远程的仓库`
@@ -129,7 +134,7 @@ git pull origin master
 git push origin master
 ```
 
-## remote
+# remote (连接)
 
 ```
 git remote -v  显示所有远程仓库
@@ -154,7 +159,7 @@ git remote rename old-name new-name
 git remote add origin git@github.com:MG280010/hwj.gitgit@github.com:MG280010/hwj.git
 ```
 
-## git 查看提交历史
+# git 查看提交历史
 
 ```
 git log
@@ -172,8 +177,9 @@ git blame<file>
 
 ## stash
 
-git 储藏  
-将一个为提交的修改存储在本地。用于后续恢复当前工作目录
+## git 储藏
+
+## 将一个为提交的修改存储在本地。用于后续恢复当前工作目录
 
 ```
 git stash
@@ -196,13 +202,40 @@ git stash drop
 
 ## reset
 
+## 后悔药
+
 ```
 git reset [HEAD]
+将暂存区的东西清除
+
 用于重置暂存区的文件与上一次保持一致，工作区文件内容保持不变
 
 git reset --soft HEAD~3   # 回退上上上一个版本
 
 ```
+
+```
+其他相关代码
+git reflog
+
+列出所有commit 记录
+```
+
+![Image text](img/reflog.png)
+
+## 可以看到 reset 前的记录
+
+```
+git reset <commit ID>
+
+回到reset 前的记录啦！
+```
+
+## git reset
+
+## reset 后 不管是工作目錄以及暫存區的檔案都會丟掉
+
+![Image text](img/git_reset_hard.gif)
 
 ## 无用的代码增加了
 
@@ -211,7 +244,14 @@ cat README.md
 查看README.md中的内容
 ```
 
-##
+# 这边更建议使用 git revert
+
+### 保留先前提交的更改历史记录 避免删除历史记录
+
+```
+用法：
+git revert <commit> (如分支名或commit id)
+```
 
 ```
 cd /进入某文件
