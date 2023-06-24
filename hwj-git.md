@@ -258,3 +258,58 @@ cd /进入某文件
 cd .. /返回上一层
 ls /查看该层存在内容文件
 ```
+
+# 服务器上搭建 git 仓库
+
+## 安装 git
+
+```
+sudo apt-get install  git
+或
+sudo apt install git
+```
+
+## 创建 空的 git 仓库 ，
+
+### 进入你想要的创建 git 仓库 de 目录
+
+```
+cd 进入
+ls 列出
+mkdir myrep.git
+
+例
+cd /home 这里选择在/home目录下创建
+mkdir gitproject 文件夹名根据实际项目来起
+```
+
+## 文件夹 创建裸仓库
+
+```
+cd gitproject 创建新的裸仓库
+git init --bare gitproject.git
+
+--bare 指创建一个裸仓库
+```
+
+## 配置
+
+### 设置权限 确保 git 仓库所在的目录和文件具有正确的权限
+
+```
+chown -R git:git gitproject.git
+
+例
+sudo chown -R www-data:www-data myrepo.git
+```
+
+## 克隆 git 仓库
+
+```
+git clone <username>@<server_ip>:目录名项目名
+
+username 用户名
+server_ip 服务器 ip
+```
+
+# 持续更新。。。
