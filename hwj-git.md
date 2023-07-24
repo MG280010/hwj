@@ -32,7 +32,7 @@ $git init
 ## 2.克隆远程仓库 \*\*\*
 
 ```
-git clone [] //git@github.com:MG280010/hwj.git
+git clone [] 例//git@github.com:MG280010/hwj.git
 ```
 
 ## 3.查看文件状态 \*\*\*
